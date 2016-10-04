@@ -1,0 +1,24 @@
+Daniel Cancelmo
+Project 3 -- Fireworks
+Lab: Tues. & Thurs. 12:30-1:45
+TA: Patrick Conway
+I did not collaborate with anyone on this assignment.
+
+User's Guide:
+The sliders change the values of initial velocity of the firework, angle of launch, and time delay of explosion from launch respectively.
+You may then choose the color of the tail of the firework, which will also be the primary color of the explosion, unless you choose the 'Pokeball' type whose colors are predetermined.
+The type of firework shape can then be chosen. The sliders are initially null and must be set by the user. When you are happy with the settings, press the "Launch!" button to fire the firework. 
+After a few seconds, a new window will open showing your firework trail and explosion design using the values you choose.
+
+
+Two primary classes: 'FireworksGUI' and 'Fireworks'. 
+'FirewprksGUI' has 'Frame' and 'Canvas' nested inside it.
+
+The main method is located in FireworksGUI class. It creates an instance of itself and sets visible. 
+The constructor creates the button, labels, sliders, and comboboxes and uses a flow layout. The sliders show a null value at start to force the user to enter values, otherwise the firework explodes at the starting point
+The user enters in their desired values for speed, angle, time, color, and type. The actionPerformed and stateChanged methods detect these changes and alter the values. 
+When the launch button is pressed an instance of the Frame class nested inside FireworksGUI is created which creates a new frame and calls the Canvas class nested in FireworksGUI to fill it.
+The Canvas class uses the paintComponent method to draw the image. It first calls on Fireworks.trajetory to calculate and draw the trajectory of the firework.
+It then calls on Fireworks.finalPoint to calculate the point at which it explodes. A switch-case statement then identifies what type of firework was selected and calls the appropriate method in the Fireworks class to draw it.
+The shapes of the explosion are made using many different types of code.
+The user can change the settings and launch again, it will create another window.
